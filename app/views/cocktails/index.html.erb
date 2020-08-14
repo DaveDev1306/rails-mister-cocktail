@@ -1,8 +1,11 @@
+<div class="banner">
 <h1>Let's get drunk!!!!!!!!!</h1>
-
+</div>
 <ul>
   <% @cocktails.each do |cocktail| %>
   <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+  <%= link_to 'Edit Cocktail', edit_cocktail_path(cocktail) %>
+  <%= link_to 'Delete Cocktail', cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure you would like to DELETE " + cocktail.name } %>
   <% end %>
 </ul>
 
